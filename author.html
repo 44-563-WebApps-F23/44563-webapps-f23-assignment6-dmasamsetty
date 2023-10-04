@@ -5,7 +5,7 @@
             Using sample-input.html
         </title>
     </head>
- 
+    
 <body>
 
 <h2>Author entry Dimple Masamsetty Suresh</h2>
@@ -20,6 +20,7 @@
     <p id ="good"></p>
     <p id="oops"></p>
 </form>
+
 <script> 
 var good = 0
 var oops = 0
@@ -37,5 +38,44 @@ function  checkAuthor(){
     }
 }
 </script>
+<div class="container">
+    <img id = " cityimg" src="madyapradesh.jpg"  style="width: 100px; height: 100px ;" onclick="selectImage()" alt="madyapradesh">
+</div>
+
+
+<script>
+    let useImage = 1;
+    function selectImage()
+    {
+        var imgElement = document.getElementById(' cityimg');
+
+        switch(useImage){
+            case 1:
+            imgElement.src = "madyapradesh.jpg";
+                useImage = 2;
+    
+        break;
+        case 2:
+        imgElement.src =  "mysuru.jpg";
+        
+                        useImage = 3;
+            
+        break;
+        case 3:
+            imgElement.src =  "ahemdabad.jpg";
+                useImage = 1;
+
+
+        break;
+  default:
+
+            break;
+    
+}
+        }
+        
+    
+</script>
+
 </body>
 </html> 
