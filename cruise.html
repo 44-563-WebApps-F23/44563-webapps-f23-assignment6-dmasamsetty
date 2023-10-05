@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Cruise Experience</title>
+ </head>
+<body>
+
+<h1>Dimple Masamsetty Suresh goes on a cruise</h1>
+<form>
+    <input type="checkbox" id="sharecab" name="sharecab" value="true">
+    <lable for="sharecab">Shares Cabin</lable><br>
+
+    <input type="checkbox" id="bfast" name="bfast" value="true">
+    <lable for="bfast">Breakfast</lable><br>
+
+    <input type="checkbox" id="PP" name="PP" value="false">
+    <lable for="PP">Pool Pass</lable><br>
+
+    <input type="button" value="Select a cruise" onclick="selectCruise()">
+</form>
+<p id="resultforCruise">choosing the text </p>
+
+
+<script> 
+var  my_cruise={};
+function selectCruise(){
+    my_cruise={};
+  if(document.getElementById("sharecab").checked) {
+    my_cruise.shared=true;
+  }
+  else
+  my_cruise.shared=false;
+
+  if(document.getElementById("bfast").checked) {
+    my_cruise.breakfast=true;
+  }
+  else
+  my_cruise.breakfast=false;
+
+  if(document.getElementById("PP").checked) {
+    my_cruise.pool=true;
+  }
+  else
+  my_cruise.pool=false;
+  
+  document.getElementById("resultforCruise").innerHTML="{shared: " + my_cruise.shared + "; breakfast: "+my_cruise.breakfast+"; pool: "+my_cruise.pool+";}";
+}
+
+</script>
+
+</body>
+</html>
