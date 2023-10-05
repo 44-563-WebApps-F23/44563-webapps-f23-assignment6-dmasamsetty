@@ -1,81 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Using sample-input.html
-        </title>
-    </head>
-    
+
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+    <title>
+        Using sample-input.html
+    </title>
+</head>
+
 <body>
 
-<h2>Author entry Dimple Masamsetty Suresh</h2>
+    <h2>Author entry Dimple Masamsetty Suresh</h2>
 
-<form>
-    <label for="author">The hidden author name </label>
-    <input type ="password" id="author" name="author" min=10 max=50 step=2 value="Dickens"> <br>
-    <label for="Guess">Guess the author </label>
-    <input type ="text" id="Guess" name="Guess" autofocus value=""> <br>  
-    <button type="button" onclick="checkAuthor()">Check the guess</button> 
-    <p id="result">This text will be replaced </p>
-    <p id ="good"></p>
-    <p id="oops"></p>
-</form>
+    <form>
+        <label for="author">The hidden author name </label>
+        <input type="password" id="author" name="author" min=10 max=50 step=2 value="Dickens"> <br>
+        <label for="Guess">Guess the author </label>
+        <input type="text" id="Guess" name="Guess" autofocus value=""> <br>
+        <button type="button" onclick="checkAuthor()" class="btn btn-primary">Check the guess</button>
+        <p id="result">This text will be replaced </p>
+        <p id="good"></p>
+        <p id="oops"></p>
+    </form>
 
-<script> 
-var good = 0
-var oops = 0
-function  checkAuthor(){   
-    sec_Author = document.getElementById("author").value
-    guess = document.getElementById("Guess").value   
-    if(sec_Author==guess){    
-        good++
-        alert("You got it right")
-        document.getElementById("good").innerText = `Good Counts: ${good}`
-    } else {        
-        oops++
-        alert("Sorry")
-        document.getElementById("oops").innerText = `Oops Counts: ${oops}`
-    }
-}
-</script>
-<div class="container">
-    <img id = " cityimg" src="madyapradesh.jpg"  style="width: 100px; height: 100px ;" onclick="selectImage()" alt="madyapradesh">
-</div>
-
-
-<script>
-    let useImage = 1;
-    function selectImage()
-    {
-        var imgElement = document.getElementById(' cityimg');
-
-        switch(useImage){
-            case 1:
-            imgElement.src = "madyapradesh.jpg";
-                useImage = 2;
-    
-        break;
-        case 2:
-        imgElement.src =  "mysuru.jpg";
-        
-                        useImage = 3;
-            
-        break;
-        case 3:
-            imgElement.src =  "ahemdabad.jpg";
-                useImage = 1;
-
-
-        break;
-  default:
-
-            break;
-    
-}
+    <script>
+        var good = 0
+        var oops = 0
+        function checkAuthor() {
+            sec_Author = document.getElementById("author").value
+            guess = document.getElementById("Guess").value
+            if (sec_Author == guess) {
+                good++
+                alert("You got it right")
+                document.getElementById("good").innerText = `Good Counts: ${good}`
+            } else {
+                oops++
+                alert("Sorry")
+                document.getElementById("oops").innerText = `Oops Counts: ${oops}`
+            }
         }
-        
-    
-</script>
+    </script>
+    <div class="container">
+        <img id="cityimg" src="madyapradesh.jpg" style="width: 100px; height: 100px ;" onclick="selectImage()"
+            alt="madyapradesh">
+    </div>
+
+
+    <script>
+        let useImage = 1;
+        function selectImage() {
+            var imgElement = document.getElementById('cityimg');
+
+            switch (useImage) {
+                case 1:
+                    imgElement.src = "madyapradesh.jpg";
+                    useImage = 2;
+
+                    break;
+                case 2:
+                    imgElement.src = "mysuru.jpg";
+
+                    useImage = 3;
+
+                    break;
+                case 3:
+                    imgElement.src = "ahemdabad.jpg";
+                    useImage = 1;
+
+
+                    break;
+                default:
+
+                    break;
+
+            }
+        }
+            </script>
 
 </body>
-</html> 
+
+</html>
