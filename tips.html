@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>Loop computation</title>
+
+<body>
+
+    <h1>Dimple Masamsetty suresh shows tip amounts</h1>
+
+    <form>
+        <label for="baseamt">Enter base amount</label>
+        <input type="number" id="baseamt" name="baseamt" value=50> <br>
+
+        <label for="tipval">Enter the tip percent</label>
+        <input type="number" id="tipval" name="tipval" value="15"> <br>
+
+        <input type="button" onclick="tips()" value="Show tip">
+    </form>
+    <p id="results">Tips are: </p>
+    <script>
+
+        function tips() {
+            var bValue = parseInt(document.getElementById("baseamt").value);
+            var tValue = parseInt(document.getElementById("tipval").value);
+            var myOutput="";
+            var toShow="";
+        for(var i=0;i<5;i++)
+        {        
+            myOutput=(bValue*(tValue+i*4))/100;
+            toShow+=(tValue+i*4)+"% is "+myOutput.toFixed(2)+"; ";
+        }
+            document.getElementById("results").innerHTML = "Tips are: " + (toShow);
+
+        }
+        
+    </script>
+
+</body>
+
+</html>
