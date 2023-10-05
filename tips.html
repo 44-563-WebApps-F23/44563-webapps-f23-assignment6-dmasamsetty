@@ -16,6 +16,18 @@
         <input type="button" onclick="tips()" value="Show tip">
     </form>
     <p id="results">Tips are: </p>
+    <form>
+        <input onclick="chooseOp()" type="radio" id="addition" name="radiob" value="sum" >
+        <label for="addition">sum</label></br>
+
+        <input onclick="chooseOp()" type="radio" id="differ" name="radiob" value="difference">
+        <label for="differ">diff</label></br>
+
+        <input onclick="chooseOp()" type="radio" id="multiplication" name="radiob" value="product">
+        <label for="multiplication">mult</label></br>
+    </form>
+<p id="resultRadiob">Appropriate text </p>
+
     <script>
 
         function tips() {
@@ -30,6 +42,17 @@
         }
             document.getElementById("results").innerHTML = "Tips are: " + (toShow);
 
+        }
+
+        function chooseOp() {
+            var bValue = parseInt(document.getElementById("baseamt").value);
+            var tValue = parseInt(document.getElementById("tipval").value);
+            if (document.getElementById("addition").checked)
+                document.getElementById("resultRadiob").innerHTML = "Sum of " + bValue + " and " + tValue + " is " + (bValue + tValue);
+            else if (document.getElementById("differ").checked)
+                document.getElementById("resultRadiob").innerHTML = "difference of " + bValue + " and " + tValue + " is " + (bValue - tValue);
+            else
+                document.getElementById("resultRadiob").innerHTML = "Product of " + bValue + " and " + tValue + " is " + (bValue * tValue);
         }
         
     </script>
